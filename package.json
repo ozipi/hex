@@ -1,0 +1,46 @@
+{
+  "name": "hex",
+  "version": "1.0.0",
+  "description": "hex notation tools",
+  "main": "src/hex.js",
+  "scripts": {
+    "test": "nyc mocha",
+    "watch:test": "mocha --watch",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozipi/hex.git"
+  },
+  "keywords": [
+    "hex",
+    "notation"
+  ],
+  "author": "Oscar Valdez <ozipi.nomad@gmail.com> (http://ozipi.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ozipi/hex/issues"
+  },
+  "homepage": "https://github.com/ozipi/hex#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "eslint": "3.2.0",
+    "eslint-config-kentcdodds": "^9.0.0",
+    "mocha": "3.0.0",
+    "nyc": "7.1.0"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "branches": 100,
+    "function": 100,
+    "lines": 100,
+    "statements": 100,
+    "reporter": [
+      "text",
+      "lcov"
+    ],
+    "include": [
+      "src"
+    ]
+  }
+}
