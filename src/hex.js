@@ -15,3 +15,7 @@ module.exports = {
 	all: hexConstants,
 	binaryToHex: binaryToHex 
 }
+
+function e(){
+	return " e";
+}

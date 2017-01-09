@@ -4,9 +4,8 @@
 		"node": true
 	},
 	"extends": [
-		"kentcdodds/import/best-practices",
-		"kentcdodds/import/possible-errors",
-		"kentcdodds/import/mocha"
+		"eslint-config-kentcdodds/best-practices",
+		"eslint-config-kentcdodds/possible-errors"
 	],
 	"rules": {
 
