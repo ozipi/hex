@@ -2,12 +2,14 @@
   "name": "hex",
   "version": "1.0.0",
   "description": "hex notation tools",
-  "main": "src/hex.js",
+  "main": "dist/hex.js",
   "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "babel --copy-files --out-dir dist --ignore *.test.js src",
     "test": "nyc mocha",
     "watch:test": "mocha --watch",
     "lint": "eslint src/hex.js",
-    "validate": "npm-run-all --parallel test"
+    "validate": "npm-run-all --parallel lint test build"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,9 @@
     "hex",
     "notation"
   ],
+  "files": [
+    "dist"
+  ],
   "author": "Oscar Valdez <ozipi.nomad@gmail.com> (http://ozipi.com/)",
   "license": "MIT",
   "bugs": {
@@ -24,13 +29,16 @@
   },
   "homepage": "https://github.com/ozipi/hex#readme",
   "devDependencies": {
+    "babel-cli": "6.11.4",
+    "babel-preset-es2015": "6.9.0",
     "chai": "3.5.0",
     "eslint": "3.2.0",
     "eslint-config-kentcdodds": "^9.0.0",
     "ghooks": "1.3.2",
     "mocha": "3.0.0",
     "npm-run-all": "2.3.0",
-    "nyc": "7.1.0"
+    "nyc": "7.1.0",
+    "rimraf":  "2.5.4"
   },
   "nyc": {
     "check-coverage": true,
@@ -44,6 +52,11 @@
     ],
     "include": [
       "src"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015"
     ]
   },
   "config": {

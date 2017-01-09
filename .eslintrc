@@ -5,7 +5,8 @@
 	},
 	"extends": [
 		"eslint-config-kentcdodds/best-practices",
-		"eslint-config-kentcdodds/possible-errors"
+		"eslint-config-kentcdodds/possible-errors",
+		"eslint-config-kentcdodds/mocha"
 	],
 	"rules": {
 
