@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "babel --copy-files --out-dir dist --ignore *.test.js src",
-    "test": "nyc mocha",
+    "test": "cross-env NODE_ENV=test nyc mocha",
     "watch:test": "mocha --watch",
     "lint": "eslint src/hex.js",
     "validate": "npm-run-all --parallel lint test build"
@@ -30,7 +30,9 @@
   "homepage": "https://github.com/ozipi/hex#readme",
   "devDependencies": {
     "babel-cli": "6.11.4",
+    "babel-register": "6.11.6",
     "babel-preset-es2015": "6.9.0",
+    "babel-plugin-istanbul": "1.0.3",
     "chai": "3.5.0",
     "eslint": "3.2.0",
     "eslint-config-kentcdodds": "^9.0.0",
@@ -50,6 +52,9 @@
       "text",
       "lcov"
     ],
+    "instrument": false,
+    "sourceMap": false,
+    "require": ["babel-register"],
     "include": [
       "src"
     ]
@@ -57,7 +62,14 @@
   "babel": {
     "presets": [
       "es2015"
-    ]
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "istanbul"
+        ]
+      }
+    }
   },
   "config": {
     "ghooks": {

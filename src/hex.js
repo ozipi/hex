@@ -1,17 +1,18 @@
-'use strict';
-
-var hexConstants = {
+const hexConstants = {
 	"00": "[hex-empty]",
 	"01": "[hex-half-left]",
 	"10": "[hex-half-right]",
 	"11": "[hex-full]"
 };
 
-var binaryToHex = function(binary) {
+const binaryToHex = function(binary) {
 	return hexConstants[binary];
 };
 
-module.exports = {
+const mainExport = {
 	all: hexConstants,
-	binaryToHex: binaryToHex 
+	binaryToHex
 }
+
+export default mainExport
+module.exports = mainExport
