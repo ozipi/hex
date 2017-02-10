@@ -23,4 +23,6 @@ so a full byte will be converted as follows
 [half-left][full][empy][half-right]
 10110001 
 
-
+usage:
+- var hex = require('./hex');
+hex.binaryToHex("11");
