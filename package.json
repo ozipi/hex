@@ -43,7 +43,7 @@
     "mocha": "3.0.0",
     "npm-run-all": "2.3.0",
     "nyc": "7.1.0",
-    "rimraf":  "2.5.4",
+    "rimraf": "2.5.4",
     "webpack": "1.13.1",
     "json-loader": "0.5.4",
     "babel-loader": "6.2.4"
@@ -60,7 +60,9 @@
     ],
     "instrument": false,
     "sourceMap": false,
-    "require": ["babel-register"],
+    "require": [
+      "babel-register"
+    ],
     "include": [
       "src"
     ]
@@ -81,5 +83,8 @@
     "ghooks": {
       "pre-commit": "npm run validate"
     }
+  },
+  "dependencies": {
+    "cross-env": "3.1.4"
   }
 }
